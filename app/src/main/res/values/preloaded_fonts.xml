@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aladin</item>
+        <item>@font/alfa_slab_one</item>
+        <item>@font/amita</item>
+        <item>@font/annie_use_your_telescope</item>
+        <item>@font/anton</item>
+        <item>@font/bungee</item>
+        <item>@font/chilanka</item>
+        <item>@font/mclaren</item>
+        <item>@font/montserrat</item>
+        <item>@font/roboto_mono_thin</item>
+        <item>@font/roboto_slab_thin</item>
+        <item>@font/rock_salt</item>
+    </array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home_icon" />
+    <item
+        android:id="@+id/doctors"
+        android:title="Doctors"
+        android:icon="@drawable/doctor_icon" />
+    <item
+        android:id="@+id/fab"
+        android:title=""
+        android:enabled="false" />
+    <item
+        android:id="@+id/medicine"
+        android:title="Medicine"
+        android:icon="@drawable/medicine_icon" />
+    <item
+        android:id="@+id/more"
+        android:title="More"
+        android:icon="@drawable/more_icon" />
+</menu>
