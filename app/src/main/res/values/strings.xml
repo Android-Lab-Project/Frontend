@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">HealTechBD</string>
+    <string name="hint_wt">Enter your Weight</string>
+    <string name="hint_htf">Enter your Height(in ft)</string>
+    <string name="hint_htI">Enter your Height(in Inch)</string>
     <string name="signup"><u>Sign Up</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_bmicalculator">BMICalculator</string>
 </resources>

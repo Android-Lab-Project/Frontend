@@ -10,4 +10,8 @@
     <color name="colorAccent">#00A5FF</color>
     <color name="primaryTextColor">#00a5ff</color>
     <color name="loginBkColor">#f0f0f0</color>
+    <color name="colorUW">#FFEB3B</color>
+    <color name="colorHealthy">#4CAF50</color>
+    <color name="colorOW">#BD1EE9</color>
+    <color name="colorOOW">#E8E91E1E</color>
 </resources>
