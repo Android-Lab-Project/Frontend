@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void forgotButtonClicked(View view) {
-        Intent intent = new Intent(this, AboutOurselves.class);
+        Intent intent = new Intent(this, Password_reset.class);
         startActivity(intent);
     }
 }
