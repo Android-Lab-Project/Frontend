@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    
+
 
     <androidx.cardview.widget.CardView
         android:padding="10dp"
@@ -17,32 +17,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            
+
             <ImageView
 
                 android:scaleType="fitXY"
                 android:id="@+id/imageId"
+                android:src="@drawable/abdullah_al_mukit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            
+
             <TextView
                 android:textColor="@color/colorPrimaryDark"
                 android:id="@+id/headId"
                 android:textSize="25dp"
-                android:text="Abrar Eyasir"
+                android:text="Dr. Abdullah Al Mukit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            
+
             <TextView
-                android:textSize="15dp"
-                android:text="Abrar Eyasir is a rising Computer programmer. He is a sophomore at University of Dhaka"
+                android:textSize="18dp"
                 android:id="@+id/descId"
+                android:text="MBBS (DMC), BCS (Health), MD (Hepatology), MACP (USA) Liver Specialist and Interventional Hepatologist Registrar (Hepatology) Rajshahi Medical College and Hospital"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            
-            
+
+
         </LinearLayout>
-        
+
     </androidx.cardview.widget.CardView>
 
 

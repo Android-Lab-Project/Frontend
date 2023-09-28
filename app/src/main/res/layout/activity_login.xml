@@ -78,6 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:id="@+id/loginInEmail"
                 android:drawableEnd="@drawable/done_icon"/>
 
             <View
@@ -94,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:id="@+id/loginInPassword"
                 android:drawableEnd="@drawable/password_icon"/>
 
             <RelativeLayout
@@ -121,7 +123,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Sign In"
-                android:onClick="signInClicked"
+                android:id="@+id/loginInButton"
+
                 app:cornerRadius="32dp"/>
             <View
                 android:layout_width="wrap_content"
@@ -140,10 +143,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/signup"
+                    android:id="@+id/signUpTextViewId"
                     android:layout_marginLeft="5dp"
                     android:textSize="18dp"
-                    android:onClick="signUpClicked"
+
                     android:autoLink="all"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progressbarId"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                  />
             </LinearLayout>
         </LinearLayout>
         
