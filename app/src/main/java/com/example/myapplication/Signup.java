@@ -120,9 +120,15 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
-                //Toast.makeText(getApplicationContext(),"Registration is happening",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Registration is happening",Toast.LENGTH_SHORT).show();
+
                 if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(),"Registration is Successful",Toast.LENGTH_SHORT).show();
+                    //finish();
+                    Intent intent = new Intent(getApplicationContext(), DashBoard.class);
+                  //  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                   // finish();
 
                 }
                 else {
