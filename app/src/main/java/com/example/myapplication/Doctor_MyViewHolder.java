@@ -16,10 +16,9 @@ public class Doctor_MyViewHolder extends RecyclerView.ViewHolder {
     public Doctor_MyViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        imageView=(ImageView) itemView.findViewById(R.id.imageView);
-        headText=(TextView) itemView.findViewById(R.id.headId);
-        descText=(TextView) itemView.findViewById(R.id.descId);
-
+        imageView=(ImageView) itemView.findViewById(R.id.doctor_item_image);
+        headText=(TextView) itemView.findViewById(R.id.doctor_view_title);
+        descText=(TextView) itemView.findViewById(R.id.text_view_description);
 
     }
 }

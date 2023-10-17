@@ -29,9 +29,14 @@ import java.util.List;
 
 public class DoctorFragment extends Fragment {
     RecyclerView recyclerView;
-    String url = "https://api.jsonserve.com/YZ2tHr";
+   // String url = "https://api.jsonserve.com/YZ2tHr";
+       // String url= "https://codebeautify.org/jsonviewer/y2343b97e";
 
-   // String url = "https://api.jsonserve.com/tUrrp9";
+   //String url = "https://api.jsonserve.com/tUrrp9";
+
+    //String url ="https://api.jsonserve.com/5Ld-QL";
+
+    String url ="https://api.jsonserve.com/s45yCc";
     Doctor_MyAdapter myAdapter;
     List<Doctor_MyItem> listItems;
     Context context;
