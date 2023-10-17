@@ -90,6 +90,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBar.setVisibility(View.GONE);
 
+                Toast.makeText(getApplicationContext(), "Login is happening ", Toast.LENGTH_SHORT).show();
+
                 if (task.isSuccessful()) {
                     Intent intent = new Intent(getApplicationContext(), DashBoard.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
