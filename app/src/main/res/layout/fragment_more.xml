@@ -1,93 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:layout_gravity="center"
-    android:id="@+id/RRlMain"
     tools:context=".MoreFragment">
 
 
     <Button
-        android:id="@+id/signOutBtn"
-        android:layout_width="211dp"
-        android:layout_height="45dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="105dp"
-        android:layout_marginBottom="82dp"
-        android:background="@drawable/button_danger"
-        android:text="SignOut"
-        android:textColor="#C62828"
-        android:textSize="16sp" />
+        android:id="@+id/signOut"
+        android:layout_width="122dp"
+        android:layout_height="50dp"
+        android:text="Sign Out"
+        android:textColor="#ECE7E7"
+        android:textSize="22sp"
+        android:background="@drawable/rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
-    <EditText
-        android:id="@+id/edtWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="504dp"
-        android:ems="10"
-        android:hint="@string/hint_wt"
-        android:inputType="number"
-        android:textSize="23dp" />
+    <LinearLayout
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="215dp"
+        android:background="@drawable/rectangle_round"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/edtHeightFt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="427dp"
-        android:ems="10"
-        android:hint="@string/hint_htf"
-        android:inputType="number"
-        android:textSize="23dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose your desired option"
+            android:id="@+id/welcome"
+            android:textColor="#ffffff"
+            android:textSize="26sp" />
 
-    <EditText
-        android:id="@+id/edtHeightIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="85dp"
-        android:layout_marginBottom="341dp"
-        android:ems="10"
-        android:hint="@string/hint_htI"
-        android:inputType="number"
-        android:textSize="23dp" />
+
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginBottom="243dp"
-        android:text="Calculate BMI"
-        android:textSize="24dp"
-        android:id="@+id/btnCalculate"/>
+        android:id="@+id/healthTips"
+        android:layout_width="321dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_home"
+        android:text="Health Tips"
+        android:textColor="#E8ECEF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    <TextView
-        android:id="@+id/txtResult"
-        style="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="176dp"
-        android:ems="10"
-        android:text="Result"
-        android:textAlignment="center"
-        android:textSize="33dp" />
+    <Button
+        android:id="@+id/bmiCalculator"
+        android:layout_width="321dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/button_home"
+        android:text="BMI Calculator"
+        android:textColor="#E8ECEF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
