@@ -4,6 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Diagnosis">
+    tools:context=".Diagnosis"
+    android:padding="8dp"
+    android:background="@color/primary">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDiagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

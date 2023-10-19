@@ -51,13 +51,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnRequst"
-        android:layout_width="175dp"
-        android:layout_height="140dp"
+        android:id="@+id/diagnosis"
+        android:layout_width="185dp"
+        android:layout_height="136dp"
         android:layout_marginTop="81dp"
         android:layout_marginBottom="237dp"
         android:background="@drawable/button_home"
-        android:text="Medical"
+        android:text="Diagnosis"
         android:textColor="#E8ECEF"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/signOutBtn"
