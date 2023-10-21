@@ -36,7 +36,8 @@ public class DoctorFragment extends Fragment {
 
     //String url ="https://api.jsonserve.com/5Ld-QL";
 
-    String url ="https://api.jsonserve.com/s45yCc";
+//    String url ="https://api.jsonserve.com/s45yCc";
+    String url = "http://192.168.0.111:8080/doctor/all";
     Doctor_MyAdapter myAdapter;
     List<Doctor_MyItem> listItems;
     Context context;
@@ -74,13 +75,18 @@ public class DoctorFragment extends Fragment {
                 String header,desc,img;
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray array = jsonObject.getJSONArray("MyData");
+//                    JSONArray array = jsonObject.getJSONArray("MyData");
+                    JSONArray array = jsonObject.getJSONArray("doctors");
+
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
 
-                        header=  receive.getString("headerText");
-                        desc=  receive.getString("descText");
-                        img=  receive.getString("imgLocation");
+                        header=  receive.getString("firstName")+receive.getString("lastName");
+//                        header = receive.getString("headerText");
+                        desc=  receive.getString("degrees");
+//                        desc = receive.getString("descText");
+                        img=  receive.getString("dp");
+//                        img = receive.getString("imgLocation");
 
                         Doctor_MyItem item = new Doctor_MyItem(
                                header,desc,img
