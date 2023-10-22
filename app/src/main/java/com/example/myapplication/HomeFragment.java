@@ -12,33 +12,26 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        Button diagnosisButton = view.findViewById(R.id.diagnosis);
-        diagnosisButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                openDiagnosisActivity();
-            }
-        });
-
-
-
+        ImageSlider imageSlider = view.findViewById(R.id.slider);
+        List<SlideModel> imageList = new ArrayList<SlideModel>();
+        imageList.add(new SlideModel(R.drawable.doctor_model,"You Can Take Appointments of Top Class Doctors From Our App", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.diagnosis_image,"You Can Take Appointments of Important Diagnoses From Our App", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.medication2,"You Can Order Medicines From Our App", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.ai,"You Can Use Our Numerous AI Powered Features Also", ScaleTypes.CENTER_CROP));
+        imageSlider.setImageList(imageList);
         return view;
-
-
     }
-
-    public void openDiagnosisActivity() {
-        Intent intent = new Intent(getContext(), Diagnosis.class);
-        startActivity(intent);
-    }
-
-
 }

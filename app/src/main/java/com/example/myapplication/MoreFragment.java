@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -24,20 +25,77 @@ public class MoreFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_more, container, false);
 
 
-        Button bmiCalculatorButton = view.findViewById(R.id.bmiCalculator);
-        bmiCalculatorButton.setOnClickListener(new View.OnClickListener() {
+        CardView bmi = view.findViewById(R.id.bmi);
+        CardView diagnosis = view.findViewById(R.id.diagnosis);
+        CardView symptom = view.findViewById(R.id.symptom);
+        CardView nutrition = view.findViewById(R.id.nutrition);
+        CardView medication = view.findViewById(R.id.medication);
+        CardView ai = view.findViewById(R.id.ai);
+
+        bmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openTargetActivity();
+                openBMI();
+            }
+        });
+        ai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAI();
+            }
+        });
+        diagnosis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDiagnosis();
             }
         });
 
+
+        symptom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSymptom();
+            }
+        });
+        medication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMedication();
+            }
+        });
+        nutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNutrition();
+            }
+        });
         return view;
     }
 
 
-    public void openTargetActivity() {
+    public void openBMI() {
         Intent intent = new Intent(getContext(), BMI_Calculator.class);
+        startActivity(intent);
+    }
+    public void openAI() {
+        Intent intent = new Intent(getContext(), AIConsultation.class);
+        startActivity(intent);
+    }
+    public void openDiagnosis() {
+        Intent intent = new Intent(getContext(), Diagnosis.class);
+        startActivity(intent);
+    }
+    public void openSymptom() {
+        Intent intent = new Intent(getContext(), SymptomActivity.class);
+        startActivity(intent);
+    }
+    public void openNutrition() {
+        Intent intent = new Intent(getContext(), NutritionActivity.class);
+        startActivity(intent);
+    }
+    public void openMedication() {
+        Intent intent = new Intent(getContext(), MedicationActivity.class);
         startActivity(intent);
     }
 

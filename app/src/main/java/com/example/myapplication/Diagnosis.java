@@ -64,7 +64,7 @@ public class Diagnosis extends AppCompatActivity {
             public void onResponse(String response) {
                 progressDialog.dismiss();
                 Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
-                String diagnosis_name,hospital_name, diagnosis_description, diagnosis_price;
+                String diagnosis_name, hospital_name, diagnosis_price;
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
@@ -72,14 +72,12 @@ public class Diagnosis extends AppCompatActivity {
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
-
                         diagnosis_name=  receive.getString("diagnosis");
                         hospital_name=  receive.getString("hospital");
-                        diagnosis_description=  receive.getString("description");
                         diagnosis_price=  receive.getString("price");
 
                         Diagnosis_MyItem item = new Diagnosis_MyItem(
-                               diagnosis_name,hospital_name,diagnosis_description,diagnosis_price
+                               diagnosis_name, hospital_name, diagnosis_price
                         );
                         listItems.add(item);
                         //   Log.e("TAG",header+" "+desc+" "+img);
@@ -95,11 +93,9 @@ public class Diagnosis extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 Toast.makeText(context, "Server Error!", Toast.LENGTH_SHORT).show();
             }
         });
-
         RequestQueue queue = Volley.newRequestQueue(context);
         queue.add(stringRequest);
     }

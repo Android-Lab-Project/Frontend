@@ -3,26 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="@color/primary"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="2dp"
-    app:cardBackgroundColor="@color/cardview_light_background">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
-
-        <ImageView
+        android:layout_height="110dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginRight="20dp"
             android:id="@+id/doctor_item_image"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginBottom="14dp"
-            app:srcCompat="@drawable/doctor"
-            tools:ignore="VectorDrawableCompat" />
+            android:foregroundGravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/doctor" />
 
         <TextView
             android:id="@+id/doctor_view_title"
@@ -31,53 +29,44 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="88dp"
-            android:layout_marginLeft="88dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="12dp"
+            android:paddingRight="100dp"
             android:fontFamily="@font/roboto"
             android:maxLines="1"
             android:text="Title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#2196F3" />
+            android:textSize="20dp"
+            android:textColor="#fff" />
 
         <TextView
             android:id="@+id/text_view_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/doctor_view_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="87dp"
-            android:layout_marginLeft="87dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="87dp"
             android:layout_marginBottom="13dp"
             android:fontFamily="@font/roboto"
             android:text="Description"
-            android:textColor="#B9B9B9" />
 
-        <Button
-            android:id="@+id/addDocBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="298dp"
-            android:layout_marginLeft="298dp"
-            android:visibility="gone"
-            android:text="Add Doctor" />
+            android:textColor="#fff" />
 
-        <Button
-            android:id="@+id/appointemenBtn"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appointmentBtn"
             android:layout_width="wrap_content"
-            android:layout_height="37dp"
+            android:layout_height="35dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="17dp"
-            android:layout_marginRight="17dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/button_green"
-            android:text="BOOK"
-            android:textColor="#fff" />
+            android:textColor="@color/white"
+            android:fallbackLineSpacing="true"
+            android:text="Book" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

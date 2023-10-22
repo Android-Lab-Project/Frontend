@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/signUpTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
@@ -28,7 +27,6 @@
             android:textSize="32dp" />
 
         <TextView
-            android:id="@+id/createAnAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -128,7 +126,6 @@
         app:layout_constraintTop_toBottomOf="@+id/phone_number" />
 
     <TextView
-        android:id="@+id/agreeText"
         android:layout_width="352dp"
         android:layout_height="76dp"
         android:text="By signing up, you agree to our Terms, Data Policy and Cookies Policy"

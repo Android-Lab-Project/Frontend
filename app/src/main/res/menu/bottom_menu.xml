@@ -9,7 +9,6 @@
         android:title="Doctors"
         android:icon="@drawable/doctor_icon" />
     <item
-        android:id="@+id/fab"
         android:title=""
         android:enabled="false" />
     <item

@@ -6,10 +6,7 @@
     <color name="blue">#a0aadf</color>
     <color name="gray">#575757</color>
     <color name="colorPrimary">#1F5BF3</color>
-    <color name="colorPrimaryDark">#0947E8</color>
-    <color name="colorAccent">#00A5FF</color>
     <color name="primaryTextColor">#00a5ff</color>
-    <color name="loginBkColor">#f0f0f0</color>
     <color name="colorUW">#FFEB3B</color>
     <color name="colorHealthy">#4CAF50</color>
     <color name="colorOW">#BD1EE9</color>

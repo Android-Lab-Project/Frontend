@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="2dp"
-    android:background="@color/primary"
-    app:cardBackgroundColor="@color/cardview_light_background">
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
-
+        android:background="@color/primary"
+        android:layout_height="130dp">
 
         <TextView
             android:id="@+id/diagnosis_name"
@@ -26,25 +27,9 @@
             android:fontFamily="@font/roboto"
             android:maxLines="1"
             android:text="Diagnosis Name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#2196F3" />
-
-        <TextView
-            android:id="@+id/diagnosis_price"
-            android:layout_width="240dp"
-            android:layout_height="46dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginEnd="87dp"
-            android:layout_marginBottom="3dp"
-            android:fontFamily="@font/roboto"
-            android:text="Price"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FF5722"
-            android:textSize="25dp" />
+            android:textColor="#fff"
+            android:textSize="22dp"
+            />
 
         <TextView
             android:id="@+id/hospital_name"
@@ -55,41 +40,39 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="14dp"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="44dp"
             android:fontFamily="@font/roboto"
-            android:maxLines="1"
             android:text="Hospital Name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#673AB7" />
+            android:textSize="16sp"
+            android:textColor="#fff" />
 
         <TextView
-            android:id="@+id/diagnosis_description"
-            android:layout_width="376dp"
-            android:layout_height="51dp"
+            android:id="@+id/diagnosis_price"
+            android:layout_width="240dp"
+            android:layout_height="46dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="14dp"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="98dp"
-            android:fontFamily="@font/roboto"
-            android:maxLines="1"
-            android:text="Diagnosis Description"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/lato"
+            android:text="Price"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#009688" />
+            android:textColor="#fff"
+            android:textSize="25dp" />
 
-        <Button
-            android:id="@+id/diagnosisOrderBtn"
+        <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="37dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/button_green"
-            android:text="Add to Bag"
+            android:text="Book"
+            android:paddingHorizontal="5sp"
             android:textColor="#fff" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

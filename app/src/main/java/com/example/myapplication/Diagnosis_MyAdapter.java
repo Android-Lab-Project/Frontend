@@ -36,7 +36,6 @@ public class Diagnosis_MyAdapter extends RecyclerView.Adapter<Diagnosis_MyViewHo
         final  Diagnosis_MyItem myItemPosition= Mylist.get(position);
         holder.diagnosisNameText.setText(myItemPosition.getDiagnosis_name());
         holder.hospitalNameText.setText(myItemPosition.getHospital_name());
-        holder.diagnosisDescriptionText.setText(myItemPosition.getDiagnosis_description());
         holder.diagnosisPriceText.setText(myItemPosition.getDiagnosis_price());
 
         //Picasso.get().load(myItemPosition.getImageUrl()).into(holder.imageView);
