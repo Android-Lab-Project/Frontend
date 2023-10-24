@@ -9,5 +9,7 @@
 
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 </resources>

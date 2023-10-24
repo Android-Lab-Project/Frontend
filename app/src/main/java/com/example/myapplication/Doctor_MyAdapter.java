@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,15 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
                 Toast.makeText(context,myItemPosition.getHead(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        holder.bookBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Doctor_Appointment1.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
 
     }
 
