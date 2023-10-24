@@ -37,16 +37,16 @@
 
                         <ImageView
                             android:id="@+id/doctorPicture"
-                            android:layout_width="100dp"
+                            android:layout_width="105dp"
                             android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
-                            android:background="@drawable/userplaceholder"
+                            android:background="@drawable/doctor"
                             android:scaleType="center" />
 
                         <TextView
                             android:id="@+id/doctorName"
                             android:layout_width="wrap_content"
-                            android:layout_height="30dp"
+                            android:layout_height="wrap_content"
                             android:text="Doctor Name"
                             android:textSize="30dp"
                             android:layout_centerHorizontal="true"
