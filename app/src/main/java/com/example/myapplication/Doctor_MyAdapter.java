@@ -23,6 +23,16 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
     public static final String key2="desc";
     public static final String key3="photo";
 
+    public static final String key4="hospital";
+
+    public static final String key5="placeOfHospital";
+
+    public static final String key6="contactInfo";
+
+    public static final String key7="id";
+
+
+
     public Doctor_MyAdapter(List<Doctor_MyItem> mylist,Context context) {
         Mylist = mylist;
         this.context=context;
@@ -61,11 +71,20 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
                 String doctor_name = myItemPosition.getHead();
                 String doctor_des = myItemPosition.getDesc();
                 String doctor_photo = myItemPosition.getImageUrl(); // Change data type to String
+                String hospitalName= myItemPosition.getCurrentHospital();
+                String hospitalPlace= myItemPosition.getHospitalPlace();
+                String phoneNumber= myItemPosition.getContactNumber();
+                Long DoctorID=myItemPosition.getId();
 
                 Intent intent = new Intent(view.getContext(), Doctor_Appointment1.class);
                 intent.putExtra(key1, doctor_name);
                 intent.putExtra(key2, doctor_des);
                 intent.putExtra(key3, doctor_photo);
+                intent.putExtra(key4,hospitalName);
+                intent.putExtra(key5,hospitalPlace);
+                intent.putExtra(key6,phoneNumber);
+                intent.putExtra(key7,DoctorID);
+
 
                 view.getContext().startActivity(intent);
             }

@@ -59,6 +59,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void userLogin() {
         String email = loginInEmail.getText().toString().trim();
         String password = loginInPassword.getText().toString().trim();
+        StaticVariable.email=email;
 
         if (email.isEmpty()) {
             loginInEmail.setError("Enter an email address");

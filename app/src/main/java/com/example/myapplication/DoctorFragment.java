@@ -26,6 +26,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DoctorFragment extends Fragment {
     RecyclerView recyclerView;
@@ -36,8 +37,12 @@ public class DoctorFragment extends Fragment {
 
     //String url ="https://api.jsonserve.com/5Ld-QL";
 
-    String url ="https://api.jsonserve.com/s45yCc";
+   // String url ="https://api.jsonserve.com/s45yCc";
 //    String url = "http://192.168.0.111:8080/doctor/all"
+   String url = "http://192.168.0.105:8080/doctor/all";
+
+   // private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
+
     Doctor_MyAdapter myAdapter;
     List<Doctor_MyItem> listItems;
     Context context;
@@ -54,6 +59,7 @@ public class DoctorFragment extends Fragment {
 
         listItems = new ArrayList<>();
         loadData();
+
 
         return view;
     }
@@ -72,24 +78,44 @@ public class DoctorFragment extends Fragment {
             public void onResponse(String response) {
                 progressDialog.dismiss();
                 Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
+                //doctorId, patientEmail
+
                 String header,desc,img;
+                Long idForDoctor;
+                String HospitalName,phoneNumber;
+                String HospitalLocation;
+
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray array = jsonObject.getJSONArray("MyData");
-//                    JSONArray array = jsonObject.getJSONArray("doctors");
+                  //  JSONArray array = jsonObject.getJSONArray("MyData");
+                    JSONArray array = jsonObject.getJSONArray("doctors");
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
 
-//                        header=  receive.getString("firstName")+receive.getString("lastName");
-                        header = receive.getString("headerText");
-//                        desc=  receive.getString("degrees");
-                        desc = receive.getString("descText");
-//                        img=  receive.getString("dp");
-                        img = receive.getString("imgLocation");
+                       header=  receive.getString("firstName")+" "+receive.getString("lastName");
+                     //   header = receive.getString("headerText");
+                        desc=  receive.getString("degrees");
+                   //     desc = receive.getString("descText");
+                        img=  receive.getString("dp");
+                       // img = receive.getString("imgLocation");
+
+                        idForDoctor=receive.getLong("id");
+
+                        HospitalName=receive.getString("currentHospital");
+
+                        phoneNumber=receive.getString("contactNo");
+
+                        Double ob1=receive.getJSONArray("availableTimes").getJSONObject(0).getDouble("availTime");
+
+                        Double ob2=receive.getJSONArray("availableOnlineTimes").getJSONObject(0).getDouble("availTime");
+
+                        HospitalLocation=receive.getString("place");
+
+
 
                         Doctor_MyItem item = new Doctor_MyItem(
-                               header,desc,img
+                               header,desc,img,idForDoctor,HospitalName,ob1,ob2,phoneNumber,HospitalLocation
                         );
                         listItems.add(item);
                      //   Log.e("TAG",header+" "+desc+" "+img);
@@ -113,4 +139,104 @@ public class DoctorFragment extends Fragment {
         RequestQueue queue = Volley.newRequestQueue(context);
         queue.add(stringRequest);
     }
+
+
+
+//    public void makePostRequest() {
+//        JSONObject requestBody = new JSONObject();
+//
+//        try {
+//
+//            JSONArray doctorsArray = requestBody.getJSONArray("doctors");
+//
+//            for (int i = 0; i < doctorsArray.length(); i++) {
+//                JSONObject doctorObject = doctorsArray.getJSONObject(i);
+//
+//                Long idForDoctor = doctorObject.getLong("id");
+//                String currentHospital = doctorObject.getString("currentHospital");
+//
+//                // Create a JSON object for each doctor
+//                JSONObject doctorData = new JSONObject();
+//                doctorData.put("doctorId", idForDoctor);
+//                doctorData.put("hospitalName", currentHospital);
+//
+//                // Add the doctor's data to the main requestBody
+//                requestBody.put("doctor_" + i, doctorData);
+//            }
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        ApiRequestHelper.sendPostRequest(getContext(), API_URL, requestBody, new ApiRequestHelper.VolleyCallback() {
+//            @Override
+//            public void onSuccess(String result) {
+//                // Handle the successful response here
+//                // 'result' contains the response from the server as a JSON string
+//            }
+//
+//            @Override
+//            public void onError(VolleyError error) {
+//                Toast.makeText(context, "Server Error for apiRequest!", Toast.LENGTH_SHORT).show();
+//                // Handle errors here
+//                // 'error' contains information about the error
+//            }
+//        });
+//    }
+
+
+
+//    public void makePostRequest() {
+//        JSONObject requestBody = new JSONObject();
+//
+//        Long idForDoctor;
+//        String HospitalName,phoneNumber;
+//        String HospitalLocation;
+//
+//        try {
+//            JSONArray array = requestBody.getJSONArray("doctors");
+//
+//            for (int i = 0; i < array.length(); i++) {
+//                JSONObject receive = array.getJSONObject(i);
+//
+//
+//                idForDoctor=receive.getLong("id");
+//
+//                HospitalName=receive.getString("currentHospital");
+//
+//
+//
+//                requestBody.put("doctorId",idForDoctor);
+//                requestBody.put("email", HospitalName);
+//
+//
+//
+//
+//            }
+//
+//
+//
+//
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        ApiRequestHelper.sendPostRequest(getContext(), API_URL, requestBody, new ApiRequestHelper.VolleyCallback() {
+//            @Override
+//            public void onSuccess(String result) {
+//                // Handle the successful response here
+//                // 'result' contains the response from the server as a JSON string
+//            }
+//
+//            @Override
+//            public void onError(VolleyError error) {
+//
+//                Toast.makeText(context, "Server Error for apiRequest!", Toast.LENGTH_SHORT).show();
+//                // Handle errors here
+//                // 'error' contains information about the error
+//            }
+//        });
+//    }
 }
+
