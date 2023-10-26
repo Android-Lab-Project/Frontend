@@ -26,35 +26,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Full Name"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientProblem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Problem(fever...)"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Id"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientDob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Date Of Birth(dd/mm/yyyy)"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:layout_marginTop="1dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:id="@+id/tvDate"
+            android:layout_marginTop="1dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
             <Button
                 android:id="@+id/bookAppointment"
                 android:layout_width="wrap_content"
