@@ -29,7 +29,9 @@ public class Doctor_Appointment1 extends AppCompatActivity {
 
     private TextView mTextViewContactInfo;
 
-    private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
+   // private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
+
+    private  static final String API_URL = StaticVariable.abrar+"/add/appointment";
 
     Long idForDoctor;
 
@@ -111,6 +113,28 @@ public class Doctor_Appointment1 extends AppCompatActivity {
             public void onSuccess(String result) {
                 // Handle the successful response here
                 // 'result' contains the response from the server as a JSON string
+
+//                try {
+//                    // Parse the JSON response
+//                    JSONObject jsonResponse = new JSONObject(result);
+//
+//                    // Check if the response contains a specific key
+//                    if (jsonResponse.has("key")) {
+//                        // Extract data from the JSON response
+//                        String data = jsonResponse.getString("key");
+//
+//                        // Now you can use the 'data' as needed
+//                        // For example, update UI elements or perform other actions
+//                    } else {
+//                        // Handle the case where the expected key is not present in the response
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    // Handle JSON parsing error, if any
+//                }
+
+
+
             }
 
             @Override

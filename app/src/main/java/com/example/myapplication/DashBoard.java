@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.myapplication.databinding.ActivityDashboardBinding;
 import com.example.myapplication.databinding.ActivityMainBinding;
@@ -70,6 +71,29 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int itemIdf = item.getItemId();
+
+        // Log.d("Dashboard","Item Clicked: " + itemIdf);
+
+        Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+
+        if (itemIdf == R.id.nav_dashboard) {
+
+        } else if (itemIdf == R.id.nav_doctor) {
+
+            Intent doctorIntent = new Intent(this, Doctor_Appointment1.class);
+            startActivity(doctorIntent);
+
+        } else if (itemIdf == R.id.nav_diagnosis) {
+
+        } else if (itemIdf == R.id.nav_medicine) {
+
+        } else if (itemIdf == R.id.nav_about) {
+
+        } else if (itemIdf == R.id.nav_signout) {
+
+        }
+
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

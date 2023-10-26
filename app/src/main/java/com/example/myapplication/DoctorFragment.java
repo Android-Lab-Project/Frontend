@@ -39,7 +39,9 @@ public class DoctorFragment extends Fragment {
 
    // String url ="https://api.jsonserve.com/s45yCc";
 //    String url = "http://192.168.0.111:8080/doctor/all"
-   String url = "http://192.168.0.105:8080/doctor/all";
+   //String url = "http://192.168.0.105:8080/doctor/all";
+
+    String url = StaticVariable.abrar+"/doctor/all";
 
    // private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
 
