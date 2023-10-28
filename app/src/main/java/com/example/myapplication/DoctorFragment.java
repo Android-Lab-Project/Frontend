@@ -41,7 +41,7 @@ public class DoctorFragment extends Fragment {
 //    String url = "http://192.168.0.111:8080/doctor/all"
    //String url = "http://192.168.0.105:8080/doctor/all";
 
-    String url = StaticVariable.abrar+"/doctor/all";
+    String url = StaticVariable.araf+"/doctor/all";
 
    // private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
 
@@ -88,6 +88,7 @@ public class DoctorFragment extends Fragment {
                 String HospitalLocation;
 
                 try {
+
                     JSONObject jsonObject = new JSONObject(response);
                   //  JSONArray array = jsonObject.getJSONArray("MyData");
                     JSONArray array = jsonObject.getJSONArray("doctors");
@@ -95,23 +96,24 @@ public class DoctorFragment extends Fragment {
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
 
-                       header=  receive.getString("firstName")+" "+receive.getString("lastName");
+                   //    header=  receive.getString("firstName")+" "+receive.getString("lastName");
+                        header=  receive.getString("firstName");
                      //   header = receive.getString("headerText");
-                        desc=  receive.getString("degrees");
+                        desc=  receive.getString("degrees");//
                    //     desc = receive.getString("descText");
                         img=  receive.getString("dp");
                        // img = receive.getString("imgLocation");
 
                         idForDoctor=receive.getLong("id");
 
-                        HospitalName=receive.getString("currentHospital");
+                        HospitalName=receive.getString("currentHospital");//
 
                         phoneNumber=receive.getString("contactNo");
 
-                        Double ob1=receive.getJSONArray("availableTimes").getJSONObject(0).getDouble("availTime");
-
-                        Double ob2=receive.getJSONArray("availableOnlineTimes").getJSONObject(0).getDouble("availTime");
-
+                    //   Double ob1=receive.getJSONArray("availableTimes").getJSONObject(0).getDouble("availTime");
+                        Double ob1=0.0;
+                   //    Double ob2=receive.getJSONArray("availableOnlineTimes").getJSONObject(0).getDouble("availTime");
+                        Double ob2=0.0;
                         HospitalLocation=receive.getString("place");
 
 

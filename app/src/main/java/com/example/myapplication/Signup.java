@@ -25,6 +25,8 @@ import java.util.regex.Pattern;
 public class Signup extends AppCompatActivity implements View.OnClickListener {
 
 
+
+
     private EditText signUpName,signUpEmail,signUpPassword,signUpContactNumber;
     private Button signUpButton;
 

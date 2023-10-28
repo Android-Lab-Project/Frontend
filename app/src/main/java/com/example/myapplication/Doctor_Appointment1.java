@@ -31,7 +31,7 @@ public class Doctor_Appointment1 extends AppCompatActivity {
 
    // private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
 
-    private  static final String API_URL = StaticVariable.abrar+"/add/appointment";
+    private  static final String API_URL = StaticVariable.araf+"/add/appointment";
 
     Long idForDoctor;
 

@@ -19,6 +19,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".DoctorDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorSignUp"
+            android:exported="false" />
+        <activity
+            android:name=".chooseOption"
+            android:exported="false" />
+        <activity
             android:name=".SymptomResponse"
             android:exported="false" />
         <activity

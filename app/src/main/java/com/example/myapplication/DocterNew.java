@@ -27,6 +27,7 @@ public class DocterNew extends AppCompatActivity {
 
     }
 
+
     public void openAMyList() {
         Intent intent = new Intent(this, DoctorMyMain.class);
         startActivity(intent);

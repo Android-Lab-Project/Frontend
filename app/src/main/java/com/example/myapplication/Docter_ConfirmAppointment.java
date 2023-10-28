@@ -27,7 +27,7 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
     private static final String TAG = "Docter_ConfirmAppointment";
 
-    private  static final String API_URL2 = StaticVariable.abrar+"/add/appointment";
+    private  static final String API_URL2 = StaticVariable.araf+"/add/appointment";
 
     private TextView mDisplayDate;
     private EditText mEditTextViewPatientName;
@@ -121,6 +121,10 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
 
         try {
+
+            //profile,patientlist, AI]
+
+            //picture add
 
             requestBody.put("doctorId",StaticVariable.doctor_id);
             requestBody.put("email", StaticVariable.email);
