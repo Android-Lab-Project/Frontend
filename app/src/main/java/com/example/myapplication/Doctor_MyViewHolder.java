@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Doctor_MyViewHolder extends RecyclerView.ViewHolder {
 
     ImageView imageView;
+
+
+
     TextView headText;
     TextView descText;
 

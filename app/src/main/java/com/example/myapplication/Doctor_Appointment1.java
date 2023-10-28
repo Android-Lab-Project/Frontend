@@ -62,6 +62,7 @@ public class Doctor_Appointment1 extends AppCompatActivity {
        Long inputDoctorId=intent.getLongExtra(Doctor_MyAdapter.key7,1);
 
        idForDoctor=inputDoctorId;
+       StaticVariable.doctor_id=inputDoctorId;
 
 
        // int imageResource = getResources().getIdentifier(inputDoctorPhoto, "drawable", getPackageName());
@@ -83,7 +84,7 @@ public class Doctor_Appointment1 extends AppCompatActivity {
             public void onClick(View v) {
 
                 openAppoointment();
-                makePostRequest();
+            //    makePostRequest();
             }
         });
 

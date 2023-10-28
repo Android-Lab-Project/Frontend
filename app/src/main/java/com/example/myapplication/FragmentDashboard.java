@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 public class FragmentDashboard extends Fragment {
 
+
+    //fragmentDashboard
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
         Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class FragmentDashboard extends Fragment {
             }
         });
         return view;
+
+
+
     }
 
     public void openDiagnosisActivity() {

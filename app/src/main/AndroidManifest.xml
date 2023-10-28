@@ -22,6 +22,15 @@
             android:name=".SymptomResponse"
             android:exported="false" />
         <activity
+            android:name=".DoctorMyMain"
+            android:exported="false" />
+        <activity
+            android:name=".DocterNew"
+            android:exported="false" />
+        <activity
+            android:name=".PatientConfirmationToDoctor"
+            android:exported="false" />
+        <activity
             android:name=".AIConsultation"
             android:exported="false"
             android:label="@string/title_activity_aiconsultation"

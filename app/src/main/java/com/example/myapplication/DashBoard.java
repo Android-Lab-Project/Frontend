@@ -79,24 +79,37 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
         if (itemIdf == R.id.nav_dashboard) {
 
+            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+
         } else if (itemIdf == R.id.nav_doctor) {
 
+           // Intent doctorIntent = new Intent(getApplicationContext(), Doctor_Appointment1.class);
             Intent doctorIntent = new Intent(this, Doctor_Appointment1.class);
             startActivity(doctorIntent);
 
         } else if (itemIdf == R.id.nav_diagnosis) {
 
+            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+
         } else if (itemIdf == R.id.nav_medicine) {
+
+            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
 
         } else if (itemIdf == R.id.nav_about) {
 
+            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+
         } else if (itemIdf == R.id.nav_signout) {
+
+            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
 
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
