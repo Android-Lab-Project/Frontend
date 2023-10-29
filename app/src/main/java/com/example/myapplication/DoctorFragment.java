@@ -61,8 +61,6 @@ public class DoctorFragment extends Fragment {
 
         listItems = new ArrayList<>();
         loadData();
-
-
         return view;
     }
 
@@ -115,8 +113,6 @@ public class DoctorFragment extends Fragment {
                    //    Double ob2=receive.getJSONArray("availableOnlineTimes").getJSONObject(0).getDouble("availTime");
                         Double ob2=0.0;
                         HospitalLocation=receive.getString("place");
-
-
 
                         Doctor_MyItem item = new Doctor_MyItem(
                                header,desc,img,idForDoctor,HospitalName,ob1,ob2,phoneNumber,HospitalLocation

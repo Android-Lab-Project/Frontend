@@ -64,7 +64,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.loginInButton) {
-            userLogin();
+//            userLogin();
+            Intent intent = new Intent(context, NutritionActivity.class);
+            startActivity(intent);
+
         } else if (view.getId() == R.id.signUpTextViewId) {
             Intent intent = new Intent(this, chooseOption.class);
             startActivity(intent);
@@ -129,7 +132,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         Toast.makeText(context, "Login successful For Doctor", Toast.LENGTH_SHORT).show();
                     }
                     else if("No".equals(jsonObject.getString("data"))) {
-                        intent = new Intent(context, DashBoard.class);
+                        intent = new Intent(context, NutritionActivity.class);
                         Toast.makeText(context, "Login successful For User", Toast.LENGTH_SHORT).show();
                     }
                     else{
