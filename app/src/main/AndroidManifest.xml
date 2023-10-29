@@ -25,6 +25,9 @@
             android:name=".DoctorSignUpImage"
             android:exported="false" />
         <activity
+            android:name=".NutritionListActivity"
+            android:exported="false" />
+        <activity
             android:name=".DoctorDashboard"
             android:exported="false" />
         <activity

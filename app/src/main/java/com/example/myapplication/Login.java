@@ -65,6 +65,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view) {
         if (view.getId() == R.id.loginInButton) {
             userLogin();
+
         } else if (view.getId() == R.id.signUpTextViewId) {
             Intent intent = new Intent(this, chooseOption.class);
             startActivity(intent);
@@ -136,7 +137,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                         intent = new Intent(context, DoctorDashboard.class);
                         Toast.makeText(context, "Login successful by default ", Toast.LENGTH_SHORT).show();
-
                     }
 
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
