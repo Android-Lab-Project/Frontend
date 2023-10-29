@@ -43,10 +43,10 @@
             android:textSize="18sp"
             android:layout_marginTop="1dp"/>
         <EditText
-            android:id="@+id/patientEmail"
+            android:id="@+id/patientContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email Id"
+            android:hint="Contact Info"
             android:textSize="18sp"
             android:layout_marginTop="1dp"/>
         <EditText

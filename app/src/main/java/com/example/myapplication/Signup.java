@@ -81,6 +81,8 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
        String  phone_number=signUpContactNumber.getText().toString().trim();
 
 
+
+
         if(name.isEmpty()){
             signUpName.setError("Enter your name");
             signUpName.requestFocus();

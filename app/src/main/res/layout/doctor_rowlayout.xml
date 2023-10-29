@@ -12,14 +12,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="110dp">
+
+
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/doctor_item_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/doctor_item_image"
-            android:foregroundGravity="center_vertical"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:foregroundGravity="center_vertical"
             android:src="@drawable/doctor" />
 
         <TextView
