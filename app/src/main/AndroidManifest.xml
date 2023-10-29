@@ -22,6 +22,9 @@
             android:name=".PatientMain"
             android:exported="false" />
         <activity
+            android:name=".DoctorSignUpImage"
+            android:exported="false" />
+        <activity
             android:name=".NutritionListActivity"
             android:exported="false" />
         <activity
