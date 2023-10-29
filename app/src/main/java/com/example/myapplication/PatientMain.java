@@ -23,38 +23,32 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-
-//profile, AI, patient, requestPatient(zoom)
-
-public class DoctorMyMain extends AppCompatActivity {
+public class PatientMain extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
-   // String url = StaticVariable.araf+"/doctor/appointment?email="+StaticVariable.email;
+    // String url = StaticVariable.araf+"/doctor/appointment?email="+StaticVariable.email;
 
-    String url = StaticVariable.araf+"/doctor/appointment?email="+"c@gmail.com";
+    String url = StaticVariable.araf+"/doctor/user/appointment?email="+StaticVariable.email;
 
-    DoctorMyList_MyAdapter myAdapter;
-    List<DoctorMyList_item> listItems;
+    PatientMyList_MyAdapter myAdapter;
+    List<PatientMyList_item> listItems;
     Context context;
     ProgressDialog progressDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mydoctor_main);
+        setContentView(R.layout.activity_patient_main);
 
         context = this;
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView23);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewPatient);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         listItems = new ArrayList<>();
         loadData();
-
-
     }
 
     public void loadData() {
@@ -72,7 +66,7 @@ public class DoctorMyMain extends AppCompatActivity {
                 progressDialog.dismiss();
                 Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
 
-                String header,date,img,phoneNumber;
+                String pName,pProblem,pDate,pContact;
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
@@ -82,23 +76,19 @@ public class DoctorMyMain extends AppCompatActivity {
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
 
-                        header=  receive.getString("doctorName");
-                        //   header = receive.getString("headerText");
-                        date=  receive.getString("date");
-                        //     desc = receive.getString("descText");
-                        img=  receive.getString("doctorPic");
-                        // img = receive.getString("imgLocation");
-
-                        phoneNumber=receive.getString("doctorPhone");
+                        pName=  receive.getString("userName");
+                        pDate=  receive.getString("date");
+                        pProblem=  receive.getString("problem");
+                        pContact=receive.getString("userPhone");
 
 
-                        DoctorMyList_item item = new DoctorMyList_item(
-                                header,img,date,phoneNumber
+                        PatientMyList_item item = new PatientMyList_item(
+                              pName,pDate,pProblem,pContact
                         );
                         listItems.add(item);
 
                     }
-                    myAdapter = new DoctorMyList_MyAdapter(listItems, context);
+                    myAdapter = new PatientMyList_MyAdapter(listItems, context);
                     recyclerView.setAdapter(myAdapter);
 
                     Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
@@ -117,5 +107,4 @@ public class DoctorMyMain extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(context);
         queue.add(stringRequest);
     }
-
 }

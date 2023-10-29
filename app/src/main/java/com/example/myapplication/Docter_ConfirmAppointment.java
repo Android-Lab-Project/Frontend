@@ -34,14 +34,16 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
     private EditText mEditTextViewPatientProblem;
 
+    private EditText mEditTextViewPatientContactInfo;
+
 
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     private Button bt2 ;
 
-        String fullName;
-        String patientProblem;
+
+
 
 
     @Override
@@ -55,11 +57,10 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
         mEditTextViewPatientName = (EditText) findViewById(R.id.patientFullName);
         mEditTextViewPatientProblem = (EditText) findViewById(R.id.patientProblem);
+        mEditTextViewPatientContactInfo=(EditText)findViewById(R.id.patientContact) ;
 
-
-
-
-       // fullName = mEditTextViewPatientName.getText().toString();
+//        String fullName = mEditTextViewPatientName.getText().toString();
+//        StaticVariable.patient_name=fullName;
       //  patientProblem=mEditTextViewPatientProblem.getText().toString();
 
        // StaticVariable.patient_problem=patientProblem;
@@ -104,6 +105,14 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String fullName = mEditTextViewPatientName.getText().toString();
+                StaticVariable.patient_name=fullName;
+                String patientProblem=mEditTextViewPatientProblem.getText().toString();
+                 StaticVariable.patient_problem=patientProblem;
+
+                String patient_ContactInfo=mEditTextViewPatientContactInfo.getText().toString().trim();
+                StaticVariable.patient_contactInfo=patient_ContactInfo;
+
                 openBook();
                 makePostRequest2();
             }
@@ -129,6 +138,9 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
             requestBody.put("doctorId",StaticVariable.doctor_id);
             requestBody.put("email", StaticVariable.email);
             requestBody.put("date", StaticVariable.patient_date);
+            requestBody.put("userName",StaticVariable.patient_name);
+            requestBody.put("problem",StaticVariable.patient_problem);
+            requestBody.put("userPhone",StaticVariable.patient_contactInfo);
             //requestBody.put("problem",patientProblem);
 
 

@@ -10,8 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DoctorMyList_MyViewHolder   extends RecyclerView.ViewHolder{
 
 
+
+
     TextView DoctorNameText;
     TextView AppointmentDate;
+
+    TextView DoctorContact;
 
     ImageView imageViewDoctor;
 
@@ -20,5 +24,6 @@ public class DoctorMyList_MyViewHolder   extends RecyclerView.ViewHolder{
         DoctorNameText=(TextView) itemView.findViewById(R.id.mydoctor_view_title);
         AppointmentDate=(TextView) itemView.findViewById(R.id.myappointmenttime);
         imageViewDoctor=(ImageView) itemView.findViewById(R.id.mydoctor_item_image);
+        DoctorContact=(TextView) itemView.findViewById(R.id.mydoctor_view_con);
     }
 }
