@@ -48,11 +48,11 @@ public class PatientMyList_MyAdapter extends RecyclerView.Adapter<PatientMyList_
     public void onBindViewHolder(@NonNull   PatientMyList_MyViewHolder holder, int position) {
 
         final  PatientMyList_item myItemPosition= Mylist.get(position);
-        holder.PatientNameText.setText(myItemPosition.getPatientName());
-        holder.PatientProblemText.setText(myItemPosition.getPatientProblem());
-        holder.AppointmentDateText.setText(myItemPosition.getApppointmentDate_for());
-        holder.Patientcontact.setText(myItemPosition.getPatientContactInformation());
-        holder.patientAppointmentTd.setText("" + myItemPosition.getId());
+        holder.PatientNameText.setText("Name : " + myItemPosition.getPatientName());
+        holder.PatientProblemText.setText("Problem : " + myItemPosition.getPatientProblem());
+        holder.AppointmentDateText.setText("Date : " + myItemPosition.getApppointmentDate_for());
+        holder.Patientcontact.setText("Contact : " + myItemPosition.getPatientContactInformation());
+        holder.patientAppointmentTd.setText("Serial Number : " + myItemPosition.getId());
 
         //Picasso.get().load(myItemPosition.getDoctor_pic()).into(holder.imageViewDoctor);
 

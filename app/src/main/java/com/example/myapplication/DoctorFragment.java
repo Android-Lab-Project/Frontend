@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -66,67 +67,45 @@ public class DoctorFragment extends Fragment {
 
     public void loadData() {
         progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage("Loading......");
+        progressDialog.setMessage("Loading..");
         progressDialog.show();
 
         Toast.makeText(context, "Server is loading!", Toast.LENGTH_SHORT).show();
-
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
                 Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
-                //doctorId, patientEmail
 
                 String header,desc,img;
                 Long idForDoctor;
-                String HospitalName,phoneNumber;
+                String HospitalName, phoneNumber;
                 String HospitalLocation;
 
                 try {
 
                     JSONObject jsonObject = new JSONObject(response);
-                  //  JSONArray array = jsonObject.getJSONArray("MyData");
                     JSONArray array = jsonObject.getJSONArray("doctors");
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
-
-                   //    header=  receive.getString("firstName")+" "+receive.getString("lastName");
-                        header=  receive.getString("firstName");
-                     //   header = receive.getString("headerText");
-                        desc=  receive.getString("degrees");//
-                   //     desc = receive.getString("descText");
+                        header=  receive.getString("firstName") + " " + receive.getString("lastName");
+                        desc=  receive.getString("degrees");
                         img=  receive.getString("dp");
-                       // img = receive.getString("imgLocation");
-
                         idForDoctor=receive.getLong("id");
-
-                        HospitalName=receive.getString("currentHospital");//
-
+                        HospitalName=receive.getString("currentHospital");
                         phoneNumber=receive.getString("contactNo");
-
-                    //   Double ob1=receive.getJSONArray("availableTimes").getJSONObject(0).getDouble("availTime");
                         Double ob1=0.0;
-                   //    Double ob2=receive.getJSONArray("availableOnlineTimes").getJSONObject(0).getDouble("availTime");
                         Double ob2=0.0;
                         HospitalLocation=receive.getString("place");
-
-
-
-
                         Doctor_MyItem item = new Doctor_MyItem(
                                header,desc,img,idForDoctor,HospitalName,ob1,ob2,phoneNumber,HospitalLocation
                         );
                         listItems.add(item);
-                     //   Log.e("TAG",header+" "+desc+" "+img);
                     }
                     myAdapter = new Doctor_MyAdapter(listItems, context);
                     recyclerView.setAdapter(myAdapter);
-
-                    Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -134,12 +113,27 @@ public class DoctorFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
-                Toast.makeText(context, "Server Error!", Toast.LENGTH_SHORT).show();
+                Log.d("error : ", error.toString());
             }
         });
 
         RequestQueue queue = Volley.newRequestQueue(context);
+        stringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
         queue.add(stringRequest);
     }
 

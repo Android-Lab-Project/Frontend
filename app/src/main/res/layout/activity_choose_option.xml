@@ -11,8 +11,9 @@
         android:id="@+id/textView3434"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose your role"
-        android:textSize="24sp"
+        android:layout_marginTop="30dp"
+        android:text="Tell Us About You : "
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,31 +22,29 @@
 
     <Button
         android:id="@+id/doctorRole"
-        android:layout_width="260dp"
+        android:layout_width="wrap_content"
         android:layout_height="46dp"
+        android:layout_marginTop="72dp"
         android:background="#22BE87"
-        android:text="Doctor"
+        android:onClick="DoctorSignUpButton"
+        android:text="I'm A Doctor"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        android:onClick="DoctorSignUpButton"
-        app:layout_constraintTop_toBottomOf="@+id/textView3434"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/userRole"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3434" />
 
     <Button
         android:id="@+id/userRole"
-        android:layout_width="260dp"
+        android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:background="#22BE87"
-        android:text="User"
+        android:layout_marginTop="20dp"
         android:onClick="userSignUpButton"
+        android:text="I'm a User"
         android:textColor="#ffffff"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/doctorRole"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRole" />
 </androidx.constraintlayout.widget.ConstraintLayout>
