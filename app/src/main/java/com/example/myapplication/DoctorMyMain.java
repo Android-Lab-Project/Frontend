@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -40,6 +42,8 @@ public class DoctorMyMain extends AppCompatActivity {
     ProgressDialog progressDialog;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +59,11 @@ public class DoctorMyMain extends AppCompatActivity {
         loadData();
 
 
+
+
     }
+
+
 
     public void loadData() {
         progressDialog = new ProgressDialog(context);
@@ -73,6 +81,7 @@ public class DoctorMyMain extends AppCompatActivity {
                 Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
 
                 String header,date,img,phoneNumber;
+                Long cancelId;
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
@@ -88,12 +97,13 @@ public class DoctorMyMain extends AppCompatActivity {
                         //     desc = receive.getString("descText");
                         img=  receive.getString("doctorPic");
                         // img = receive.getString("imgLocation");
+                        cancelId=receive.getLong("id");
 
                         phoneNumber=receive.getString("doctorPhone");
 
 
                         DoctorMyList_item item = new DoctorMyList_item(
-                                header,img,date,phoneNumber
+                                header,img,date,phoneNumber,cancelId
                         );
                         listItems.add(item);
 

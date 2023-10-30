@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.widget.Button;
+
 public class PatientMyList_item {
 
     private String patientName;
@@ -8,11 +10,16 @@ public class PatientMyList_item {
 
     private String patientContactInformation;
 
-    public PatientMyList_item(String patientName, String apppointmentDate_for, String patientProblem,String contact) {
+    private Long id;
+
+
+
+    public PatientMyList_item(String patientName, String apppointmentDate_for, String patientProblem,String contact,Long id) {
         this.patientName = patientName;
         this.appointmentDate_for = apppointmentDate_for;
         this.patientProblem = patientProblem;
         this.patientContactInformation=contact;
+        this.id=id;
     }
 
     public String getPatientName() {
@@ -30,5 +37,9 @@ public class PatientMyList_item {
 
     public String getPatientContactInformation() {
         return patientContactInformation;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

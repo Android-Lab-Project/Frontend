@@ -18,6 +18,9 @@ public class Doctor_MyItem {
 
     private String hospitalPlace;
 
+
+
+
     public Doctor_MyItem(String head, String desc, String imageUrl,Long id,String currentHospital,
     Double onlineAvailableTime,Double offlineAvailableTime,String contactNumber,String hospitalPlace) {
         this.head = head;
