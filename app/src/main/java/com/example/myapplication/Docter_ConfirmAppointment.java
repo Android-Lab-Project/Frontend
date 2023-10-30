@@ -27,6 +27,8 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
     private static final String TAG = "Docter_ConfirmAppointment";
 
+
+
     private  static final String API_URL2 = StaticVariable.araf+"/add/appointment";
 
     private TextView mDisplayDate;

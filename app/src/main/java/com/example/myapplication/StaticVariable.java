@@ -29,6 +29,8 @@ public class StaticVariable {
 
     public static String patient_contactInfo;
 
+    public static Long cancelIdStatic;
+
 
 
 

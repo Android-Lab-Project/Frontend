@@ -67,6 +67,7 @@ public class PatientMain extends AppCompatActivity {
                 Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
 
                 String pName,pProblem,pDate,pContact;
+                Long pAppointmentID;
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
@@ -81,9 +82,11 @@ public class PatientMain extends AppCompatActivity {
                         pProblem=  receive.getString("problem");
                         pContact=receive.getString("userPhone");
 
+                        pAppointmentID=receive.getLong("id");
+
 
                         PatientMyList_item item = new PatientMyList_item(
-                              pName,pDate,pProblem,pContact
+                              pName,pDate,pProblem,pContact,pAppointmentID
                         );
                         listItems.add(item);
 
