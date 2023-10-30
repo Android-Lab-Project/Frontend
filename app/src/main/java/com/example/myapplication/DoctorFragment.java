@@ -114,6 +114,9 @@ public class DoctorFragment extends Fragment {
                         Double ob2=0.0;
                         HospitalLocation=receive.getString("place");
 
+
+
+
                         Doctor_MyItem item = new Doctor_MyItem(
                                header,desc,img,idForDoctor,HospitalName,ob1,ob2,phoneNumber,HospitalLocation
                         );
