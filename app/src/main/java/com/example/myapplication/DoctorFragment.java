@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,12 +45,16 @@ public class DoctorFragment extends Fragment {
 
     String url = StaticVariable.araf+"/doctor/all";
 
+
    // private  static final String API_URL = "http://192.168.0.105:8080/add/appointment";
 
     Doctor_MyAdapter myAdapter;
     List<Doctor_MyItem> listItems;
     Context context;
     ProgressDialog progressDialog;
+
+    SearchView searchView;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -59,9 +65,51 @@ public class DoctorFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
+        searchView = view.findViewById(R.id.searchViewDoctor);
+        searchView.clearFocus();
+
+
         listItems = new ArrayList<>();
         loadData();
+        searchDoctor();
         return view;
+    }
+
+    public void searchDoctor(){
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Handle the search query submission if needed
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Filter the data based on the search query
+                filterlist2(newText);
+                return true;
+            }
+        });
+
+    }
+
+    private void filterlist2(String text){
+        List<Doctor_MyItem>filerList=new ArrayList<>();
+
+        for(Doctor_MyItem item:listItems){
+            if(item.getHead().toLowerCase().contains(text.toLowerCase())){
+                filerList.add(item);
+            }
+
+        }
+
+        if(filerList.isEmpty()){
+            Toast.makeText(context, "No data is found!", Toast.LENGTH_SHORT).show();
+        }else{
+            myAdapter.setFilterList2(filerList);
+        }
+
     }
 
     public void loadData() {

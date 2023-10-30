@@ -110,6 +110,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(getApplicationContext(), "Login is happening", Toast.LENGTH_SHORT).show();
                 if (task.isSuccessful()) {
                     loadData();
+//                    Intent intent;
+//                    intent = new Intent(context, DashBoard.class);
+//                    startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Login unsuccessful", Toast.LENGTH_SHORT).show();
                 }

@@ -18,11 +18,17 @@ public class Medicine_MyAdapter extends RecyclerView.Adapter<Medicine_MyViewHold
     private List<Medicine_MyItem> Mylist;
     private Context context;
 
+
+
     public Medicine_MyAdapter(List<Medicine_MyItem> mylist,Context context) {
         Mylist = mylist;
         this.context=context;
     }
 
+    public void setFilterList3(List<Medicine_MyItem>filterList){
+        this.Mylist=filterList;
+        notifyDataSetChanged();
+    }
     @NonNull
     @Override
     public Medicine_MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

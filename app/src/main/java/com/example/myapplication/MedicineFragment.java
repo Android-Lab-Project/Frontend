@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,11 +39,16 @@ public class MedicineFragment extends Fragment {
     RecyclerView recyclerView;
 
     //String url ="https://api.jsonserve.com/9ehGWC";
-    String url ="https://api.jsonserve.com/j5Uocl";
+ //   String url ="https://api.jsonserve.com/j5Uocl";
+
+    String url = StaticVariable.araf+"/medicine/all";
     Medicine_MyAdapter myAdapter;
     List<Medicine_MyItem> listItems;
     Context context;
     ProgressDialog progressDialog;
+
+    SearchView searchView;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,10 +59,52 @@ public class MedicineFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
+        searchView = view.findViewById(R.id.searchViewMedicine);
+        searchView.clearFocus();
+
+
         listItems = new ArrayList<>();
         loadData();
+        searchMedicine();
 
         return view;
+    }
+
+    public void searchMedicine(){
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Handle the search query submission if needed
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Filter the data based on the search query
+                filterlist3(newText);
+                return true;
+            }
+        });
+
+    }
+
+    private void filterlist3(String text){
+        List<Medicine_MyItem>filerList=new ArrayList<>();
+
+        for(Medicine_MyItem item:listItems){
+            if(item.getMedicine_name().toLowerCase().contains(text.toLowerCase())){
+                filerList.add(item);
+            }
+
+        }
+
+        if(filerList.isEmpty()){
+            Toast.makeText(context, "No data is found!", Toast.LENGTH_SHORT).show();
+        }else{
+            myAdapter.setFilterList3(filerList);
+        }
+
     }
 
     public void loadData() {
@@ -74,13 +122,13 @@ public class MedicineFragment extends Fragment {
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray array = jsonObject.getJSONArray("MyMedicineData");
+                    JSONArray array = jsonObject.getJSONArray("medicines");
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
 
-                        medicine_name=  receive.getString("medicineName");
-                        company_name=  receive.getString("companyName");
+                        medicine_name=  receive.getString("name");
+                        company_name=  receive.getString("company");
                         medicine_price=  receive.getString("price");
 
                         Medicine_MyItem item = new Medicine_MyItem(

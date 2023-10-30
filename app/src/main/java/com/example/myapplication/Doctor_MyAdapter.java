@@ -21,6 +21,7 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
 
     public static final String key1="msg";
     public static final String key2="desc";
+
     public static final String key3="photo";
 
     public static final String key4="hospital";
@@ -36,6 +37,12 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
     public Doctor_MyAdapter(List<Doctor_MyItem> mylist,Context context) {
         Mylist = mylist;
         this.context=context;
+    }
+
+
+    public void setFilterList2(List<Doctor_MyItem>filterList){
+        this.Mylist=filterList;
+        notifyDataSetChanged();
     }
 
     @NonNull

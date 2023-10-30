@@ -21,6 +21,11 @@ public class Diagnosis_MyAdapter extends RecyclerView.Adapter<Diagnosis_MyViewHo
         this.context=context;
     }
 
+    public void setFilterList(List<Diagnosis_MyItem>filterList){
+        this.Mylist=filterList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public Diagnosis_MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

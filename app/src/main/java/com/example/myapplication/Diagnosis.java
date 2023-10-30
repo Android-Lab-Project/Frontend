@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,6 +36,9 @@ public class Diagnosis extends AppCompatActivity {
     Context context;
     ProgressDialog progressDialog;
 
+    SearchView searchView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +50,51 @@ public class Diagnosis extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
+        searchView = findViewById(R.id.searchView2);
+        searchView.clearFocus();
+
+
         listItems = new ArrayList<>();
         loadData();
+        searchData();
+    }
+
+
+    public void searchData(){
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Handle the search query submission if needed
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Filter the data based on the search query
+             filterlist(newText);
+                return true;
+            }
+        });
+
+    }
+
+    private void filterlist(String text){
+        List<Diagnosis_MyItem>filerList=new ArrayList<>();
+
+        for(Diagnosis_MyItem item:listItems){
+            if(item.getDiagnosis_name().toLowerCase().contains(text.toLowerCase())){
+                filerList.add(item);
+            }
+
+        }
+
+        if(filerList.isEmpty()){
+            Toast.makeText(context, "No data is found!", Toast.LENGTH_SHORT).show();
+        }else{
+            myAdapter.setFilterList(filerList);
+        }
+
     }
 
     public void loadData() {
@@ -100,3 +147,4 @@ public class Diagnosis extends AppCompatActivity {
         queue.add(stringRequest);
     }
 }
+
