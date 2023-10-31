@@ -122,7 +122,7 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
     }
 
     public void openBook() {
-        Intent intent = new Intent(this, PatientConfirmationToDoctor.class);
+        Intent intent = new Intent(this, DashBoard.class);
         startActivity(intent);
     }
 

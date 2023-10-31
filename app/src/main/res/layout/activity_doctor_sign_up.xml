@@ -167,7 +167,7 @@
         android:backgroundTint="@color/black"
         android:padding="15dp"
         android:background="@drawable/button_green"
-        android:text="Next"
+        android:text="Done"
         app:cornerRadius="10dp"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

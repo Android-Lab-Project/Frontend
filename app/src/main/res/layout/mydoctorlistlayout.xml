@@ -11,15 +11,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="280dp">
+
+
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mydoctor_item_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/mydoctor_item_image"
-            android:foregroundGravity="center_vertical"
-            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="21dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="301dp"
+            android:layout_marginRight="20dp"
+            android:foregroundGravity="center_vertical"
             android:src="@drawable/doctor" />
 
         <TextView
@@ -29,15 +36,17 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="12dp"
-            android:paddingRight="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="114dp"
+            android:layout_marginLeft="114dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="140dp"
             android:fontFamily="@font/roboto"
+            android:gravity="center_horizontal"
             android:maxLines="1"
             android:text="Title"
-            android:textSize="20dp"
-            android:textColor="#fff" />
-
+            android:textColor="#fff"
+            android:textSize="28dp" />
 
         <TextView
             android:id="@+id/mydoctor_view_idHello"
@@ -46,15 +55,15 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="27dp"
-            android:layout_marginLeft="27dp"
-            android:layout_marginTop="212dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="177dp"
             android:fontFamily="@font/roboto"
             android:maxLines="1"
             android:paddingRight="100dp"
-            android:text="id for appointment"
+            android:text="Serial Number :"
             android:textColor="#fff"
-            android:textSize="20dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/mydoctor_view_con"
@@ -63,32 +72,29 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="99dp"
-            android:layout_marginLeft="99dp"
-            android:layout_marginTop="62dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="104dp"
             android:fontFamily="@font/roboto"
             android:maxLines="1"
             android:paddingRight="100dp"
             android:text="Contact Info"
             android:textColor="#fff"
-            android:textSize="20dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/myappointmenttime"
-            android:layout_width="230dp"
-            android:layout_height="63dp"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mydoctor_view_con"
+            android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="154dp"
-            android:layout_marginRight="154dp"
-            android:layout_marginBottom="109dp"
-            android:background="@drawable/button_green"
-            android:fallbackLineSpacing="true"
-            android:text="Appointment Time"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="129dp"
+            android:text="Appointment Time : "
+            android:textColor="#fff"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/Cancelfor"
@@ -97,15 +103,17 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="17dp"
-            android:layout_marginRight="17dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginRight="131dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/button_green"
             android:fallbackLineSpacing="true"
             android:onClick="getCancel"
             android:text="Cancel"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textColor="#000"
+            android:textSize="24sp" />
 
 
     </RelativeLayout>

@@ -61,7 +61,7 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
         final  Doctor_MyItem myItemPosition= Mylist.get(position);
         holder.headText.setText(myItemPosition.getHead());
         holder.descText.setText(myItemPosition.getDesc());
-        Picasso.get().load(myItemPosition.getImageUrl()).into(holder.imageView);
+        holder.hospital.setText(myItemPosition.getCurrentHospital());
 
         holder.headText.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -49,11 +49,10 @@ public class DoctorMyList_MyAdapter  extends RecyclerView.Adapter<DoctorMyList_M
 
         final  DoctorMyList_item myItemPosition= Mylist.get(position);
         holder.DoctorNameText.setText(myItemPosition.getDoctor_name());
-        holder.AppointmentDate.setText(myItemPosition.getApppointment_date());
-        holder.DoctorContact.setText(myItemPosition.getDoctor_contact());
+        holder.AppointmentDate.setText("Appointment Time : " + myItemPosition.getApppointment_date());
+        holder.DoctorContact.setText("Contact : " + myItemPosition.getDoctor_contact());
        // holder.appointmentId.setText(String.valueOf(myItemPosition.getAppointmentId()));
-        holder.appointmentId.setText("" + myItemPosition.getAppointmentId());
-        Picasso.get().load(myItemPosition.getDoctor_pic()).into(holder.imageViewDoctor);
+        holder.appointmentId.setText("Serial Number : " + myItemPosition.getAppointmentId());
 
         holder.cancel.setOnClickListener(new View.OnClickListener() {
             @Override

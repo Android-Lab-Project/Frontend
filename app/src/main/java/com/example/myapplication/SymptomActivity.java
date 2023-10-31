@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -125,7 +126,7 @@ public class SymptomActivity extends AppCompatActivity {
 
     String loadData(String result) {
         mRequestQueue = Volley.newRequestQueue(this);
-        String url = "http://10.0.2.2:8000/disease?arr=" + result;
+        String url = "https://ai.healtechbd.space/disease?arr=" + result;
         String response2 = "";
         mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -146,7 +147,24 @@ public class SymptomActivity extends AppCompatActivity {
                 Toast.makeText(context, "Server Error!", Toast.LENGTH_SHORT).show();
             }
         });
+
         mRequestQueue.add(mStringRequest);
+        mStringRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
         return response2;
     }
 }

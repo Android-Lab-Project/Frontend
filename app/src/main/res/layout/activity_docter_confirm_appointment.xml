@@ -11,58 +11,51 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:fontFamily="sans-serif-condensed"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/primaryTextColor"
-            android:text="Fill The Form"/>
-
         <EditText
             android:id="@+id/patientFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name"
+            android:hint="Full Name : "
             android:textSize="18sp"
-            android:layout_marginTop="1dp"/>
+            android:layout_marginVertical="10dp" />
         <EditText
             android:id="@+id/patientProblem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Problem(fever...)"
+            android:hint="Your Problem(fever..) : "
             android:textSize="18sp"
+            android:layout_marginVertical="10dp"
             android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
+            android:layout_marginVertical="10dp"
             android:textSize="18sp"
             android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contact Info"
+            android:hint="Contact Info : "
             android:textSize="18sp"
+            android:layout_marginVertical="10dp"
             android:layout_marginTop="1dp"/>
         <EditText
             android:id="@+id/patientDob"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Date Of Birth(dd/mm/yyyy)"
-            android:textSize="18sp"
-            android:layout_marginTop="1dp"/>
+            android:hint="Date Of Birth (dd/mm/yyyy) : "
+            android:layout_marginVertical="10dp"
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Select Date"
             android:id="@+id/tvDate"
-            android:layout_marginTop="1dp"
+            android:layout_marginVertical="10dp"
             android:layout_centerHorizontal="true"
             android:textSize="25sp"/>
 
@@ -75,8 +68,9 @@
                 android:id="@+id/bookAppointment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_green"
+                android:background="@drawable/button_home"
                 android:textColor="@android:color/white"
+                android:layout_marginRight="15dp"
                 android:text="Book"
                 android:onClick="openBook"
                 android:fontFamily="@font/roboto"/>
@@ -85,12 +79,26 @@
                 android:id="@+id/cancelAppointment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_green"
+                android:background="@drawable/button_home"
                 android:fontFamily="@font/roboto"
                 android:text="Cancel"
                 android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Fill Up The Form :"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="30sp" />
 
 </RelativeLayout>
