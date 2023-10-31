@@ -40,9 +40,9 @@
         android:layout_marginTop="81dp"
         android:layout_marginBottom="237dp"
         android:background="@drawable/button_home"
-        android:text="Diagnosis"
+        android:text="Diagnoses"
         android:textColor="#E8ECEF"
-        android:textSize="25sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,33 +54,17 @@
         android:layout_height="142dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/button_home"
-        android:text="My Doctors"
+        android:text="Appointments :"
         android:textColor="#E8ECEF"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <Button
-        android:layout_width="186dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="232dp"
-        android:layout_marginBottom="98dp"
-        android:background="@drawable/button_home"
-        android:text="Meeting"
-        android:textColor="#E8ECEF"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0" />
+        />
 
     <Button
         android:layout_width="175dp"
-
-
         android:layout_height="140dp"
         android:layout_marginTop="232dp"
         android:layout_marginBottom="98dp"
