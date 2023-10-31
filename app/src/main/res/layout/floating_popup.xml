@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="450dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#CCCCFF"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="10dp"
+    android:padding="25dp">
+
+    <EditText
+        android:id="@+id/reminderMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:maxLines="3"
+        android:layout_marginBottom="5dp"
+        android:hint="Description : "/>
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginVertical="10dp"
+        android:maxLines="3"
+        android:hint="Enter Date And Time : "
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/selectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Select Date : "/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="Add Reminder : "
+            android:layout_weight="1"
+            android:layout_gravity="center" />
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>
