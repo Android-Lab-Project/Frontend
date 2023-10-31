@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 public class MedicationActivity extends AppCompatActivity {
+    Context context;
     private FloatingActionButton add;
     private TextView empty;
     private Dialog dialog;
@@ -44,6 +46,7 @@ public class MedicationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_medication);
         Toolbar toolbar1 = findViewById(R.id.ReminderToolbar1);
         setSupportActionBar(toolbar1);
+        context = this;
 
         add = findViewById(R.id.floatingButton);
         empty = findViewById(R.id.empty);
@@ -89,6 +92,7 @@ public class MedicationActivity extends AppCompatActivity {
                                 newDate.set(year,month,dayOfMonth,hourOfDay,minute,0);
                                 Calendar tem = Calendar.getInstance();
                                 DateTime = newDate.getTime().toString();
+                                NotificationScheduler.scheduleNotification(context, newDate.getTimeInMillis());
 //                                if(newDate.getTimeInMillis()-tem.getTimeInMillis()>0)
 //                                    textView.setText(newDate.getTime().toString());
 //                                else
@@ -117,13 +121,13 @@ public class MedicationActivity extends AppCompatActivity {
                     SimpleDateFormat format =
                             new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
                     remind = format.parse(DateTime);
+
                 }
                 catch(ParseException pe) {
                     Toast.makeText(MedicationActivity.this, "mainPage error line 133", Toast.LENGTH_SHORT).show();
                     throw new IllegalArgumentException(pe);
                 }
                 temp.add(new Reminders(reminderDescription, remind));
-                Log.d("Reminder : ", String.valueOf(temp.size()));
                 Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
                 calendar.setTime(remind);
                 calendar.set(Calendar.SECOND,0);
