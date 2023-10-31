@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".DoctorFragment"
     android:layout_marginBottom="50dp"
+    android:layout_marginTop="40dp"
     android:padding="8dp">
 
 <!--    <TextView-->

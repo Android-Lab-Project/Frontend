@@ -34,6 +34,7 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        replaceFragment(new HomeFragment());
         binding.bottomNavigationView.setBackground(null);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -58,9 +59,6 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
                 R.string.close_nav);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-        }
     }
 
     private void replaceFragment(Fragment fragment) {
