@@ -64,9 +64,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.loginInButton) {
-//            userLogin();
-            Intent intent = new Intent(this, MedicationActivity.class);
-            startActivity(intent);
+            userLogin();
 
         } else if (view.getId() == R.id.signUpTextViewId) {
             Intent intent = new Intent(this, chooseOption.class);
