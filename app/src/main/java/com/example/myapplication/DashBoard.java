@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -33,8 +34,6 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        replaceFragment(new HomeFragment());
         binding.bottomNavigationView.setBackground(null);
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
@@ -59,7 +58,9 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
                 R.string.close_nav);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        }
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -72,37 +73,31 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemIdf = item.getItemId();
+        Log.d("Doctor Frag : ", String.valueOf(R.id.nav_medicine));
+        switch (itemIdf) {
+            case 2131362171 :
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentDashboard()).commit();
+                break;
+            case  2131362173:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new DoctorFragment()).commit();
+                break;
+            case 2131362172:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MedicineFragment()).commit();
+                break;
 
-        // Log.d("Dashboard","Item Clicked: " + itemIdf);
+        }
 
-        Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
-
-        if (itemIdf == R.id.nav_dashboard) {
-
-            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
-
-        } else if (itemIdf == R.id.nav_doctor) {
-
-           // Intent doctorIntent = new Intent(getApplicationContext(), Doctor_Appointment1.class);
-            Intent doctorIntent = new Intent(this, Doctor_Appointment1.class);
+        if (itemIdf == R.id.nav_diagnosis) {
+            Intent doctorIntent = new Intent(this, Diagnosis.class);
             startActivity(doctorIntent);
 
-        } else if (itemIdf == R.id.nav_diagnosis) {
-
-            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
-
-        } else if (itemIdf == R.id.nav_medicine) {
-
-            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
-
-        } else if (itemIdf == R.id.nav_about) {
-
-            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+        }
+        else if (itemIdf == R.id.nav_about) {
+            Intent doctorIntent = new Intent(this, AboutOurselves.class);
+            startActivity(doctorIntent);
 
         } else if (itemIdf == R.id.nav_signout) {
-
             Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
-
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
