@@ -32,9 +32,9 @@ public class DoctorMyMain extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
-   // String url = StaticVariable.araf+"/doctor/appointment?email="+StaticVariable.email;
+   String url = StaticVariable.araf+"/doctor/appointment?email="+StaticVariable.email;
 
-    String url = StaticVariable.araf+"/doctor/appointment?email="+"c@gmail.com";
+    //String url = StaticVariable.araf+"/doctor/appointment?email="+"c@gmail.com";
 
     DoctorMyList_MyAdapter myAdapter;
     List<DoctorMyList_item> listItems;
