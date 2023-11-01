@@ -58,7 +58,8 @@ public class Doctor_Appointment1 extends AppCompatActivity {
         String inputDoctorDesc=intent.getStringExtra(Doctor_MyAdapter.key2);
         String inputDoctorPhoto=intent.getStringExtra(Doctor_MyAdapter.key3);
         String inputHospitalName=intent.getStringExtra(Doctor_MyAdapter.key4);
-        String inputHospitalPlace=intent.getStringExtra(Doctor_MyAdapter.key5);
+        //String inputHospitalPlace=intent.getStringExtra(Doctor_MyAdapter.key5);
+        String inputHospitalPlace="Dhaka";
         String inputContactInfo=intent.getStringExtra(Doctor_MyAdapter.key6);
 
         Long inputDoctorId=intent.getLongExtra(Doctor_MyAdapter.key7,1);
