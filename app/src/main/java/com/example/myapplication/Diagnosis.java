@@ -102,7 +102,7 @@ public class Diagnosis extends AppCompatActivity {
         progressDialog.setMessage("Loading......");
         progressDialog.show();
 
-        Toast.makeText(context, "Server is loading!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, "Server is loading!", Toast.LENGTH_SHORT).show();
 
 
 
@@ -110,7 +110,7 @@ public class Diagnosis extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
-                Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
                 String diagnosis_name, hospital_name, diagnosis_price;
 
                 try {
@@ -132,7 +132,7 @@ public class Diagnosis extends AppCompatActivity {
                     myAdapter = new Diagnosis_MyAdapter(listItems, context);
                     recyclerView.setAdapter(myAdapter);
 
-                    Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

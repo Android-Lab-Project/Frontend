@@ -44,6 +44,8 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
     private Button bt2 ;
 
+    private Button bt3;
+
 
 
 
@@ -56,6 +58,8 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
         mDisplayDate = (TextView) findViewById(R.id.tvDate);
 
         bt2= (Button) findViewById (R.id.bookAppointment);
+
+        bt3=(Button)findViewById(R.id.cancelAppointment343) ;
 
         mEditTextViewPatientName = (EditText) findViewById(R.id.patientFullName);
         mEditTextViewPatientProblem = (EditText) findViewById(R.id.patientProblem);
@@ -119,9 +123,24 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
                 makePostRequest2();
             }
         });
+
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openPrevious();
+
+            }
+        });
     }
 
     public void openBook() {
+        Intent intent = new Intent(this, DashBoard.class);
+        startActivity(intent);
+    }
+
+    public void openPrevious() {
         Intent intent = new Intent(this, DashBoard.class);
         startActivity(intent);
     }

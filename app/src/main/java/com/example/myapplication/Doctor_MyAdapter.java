@@ -40,6 +40,7 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
     }
 
 
+
     public void setFilterList2(List<Doctor_MyItem>filterList){
         this.Mylist=filterList;
         notifyDataSetChanged();
@@ -63,6 +64,9 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
         holder.descText.setText(myItemPosition.getDesc());
         holder.hospital.setText(myItemPosition.getCurrentHospital());
 
+
+
+
         holder.headText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +78,9 @@ public class Doctor_MyAdapter extends RecyclerView.Adapter<Doctor_MyViewHolder> 
 
         //bookbtn----------------
         holder.bookBtn.setOnClickListener(new View.OnClickListener() {
+
+
+
             @Override
             public void onClick(View view) {
                 String doctor_name = myItemPosition.getHead();

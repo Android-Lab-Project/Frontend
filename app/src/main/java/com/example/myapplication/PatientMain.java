@@ -29,6 +29,8 @@ public class PatientMain extends AppCompatActivity {
 
     // String url = StaticVariable.araf+"/doctor/appointment?email="+StaticVariable.email;
 
+
+
     String url = StaticVariable.araf+"/doctor/user/appointment?email="+StaticVariable.email;
 
     PatientMyList_MyAdapter myAdapter;

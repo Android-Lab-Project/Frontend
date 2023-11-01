@@ -1,17 +1,23 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class DoctorDashboard extends AppCompatActivity {
 
 
 
     private Button bt2 ;
+    private Button buttonMedicine;
+    private Button buttonAI;
+
+    private Button buttonProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,10 @@ public class DoctorDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_dashboard);
 
         bt2= (Button) findViewById (R.id.appointmentDetailForDoctor);
+       buttonMedicine= (Button) findViewById (R.id.myDoctorMedicine23);
+        buttonAI= (Button) findViewById (R.id.aiFeaturesDoctor);
+        buttonProfile=(Button)findViewById(R.id.myDoctorProfile);
+
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,10 +38,64 @@ public class DoctorDashboard extends AppCompatActivity {
 
             }
         });
+
+        buttonProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openProfile();
+
+            }
+        });
+
+        buttonMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openMedicine();
+
+            }
+        });
+
+        buttonAI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openAI();
+
+            }
+        });
     }
 
     public void openBook() {
         Intent intent = new Intent(this, PatientMain.class);
         startActivity(intent);
     }
+
+    public void openAI() {
+        Intent intent = new Intent(this, AIConsultation.class);
+        startActivity(intent);
+    }
+    public void openMedicine() {
+        try {
+
+            Intent intent = new Intent(this, MedicineActivity2.class);
+            startActivity(intent);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+            // Log the exception for debugging purposes
+        }
+    }
+
+    public  void openProfile(){
+        Intent intent = new Intent(this, DoctorProfile.class);
+        startActivity(intent);
+    }
+
+
 }

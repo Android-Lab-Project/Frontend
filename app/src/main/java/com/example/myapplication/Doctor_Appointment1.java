@@ -51,6 +51,8 @@ public class Doctor_Appointment1 extends AppCompatActivity {
         mTextViewContactInfo=(TextView)findViewById(R.id.doctorPhone);
 
 
+
+        //hello have to follow this
         Intent intent=getIntent();
         String inputDoctorName=intent.getStringExtra(Doctor_MyAdapter.key1);
         String inputDoctorDesc=intent.getStringExtra(Doctor_MyAdapter.key2);

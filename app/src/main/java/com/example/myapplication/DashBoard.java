@@ -85,6 +85,13 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
         }
 
+        if(itemIdf==R.id.nav_dashboard){
+            Intent intent=new Intent(this, DashBoard.class);
+            startActivity(intent);
+        }else if(itemIdf==R.id.nav_doctor){
+            Intent intent=new Intent(this, DoctorMyMain.class);
+            startActivity(intent);
+        }
         if (itemIdf == R.id.nav_diagnosis) {
             Intent doctorIntent = new Intent(this, Diagnosis.class);
             startActivity(doctorIntent);
@@ -95,7 +102,12 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
             startActivity(doctorIntent);
 
         } else if (itemIdf == R.id.nav_signout) {
-            Toast.makeText(this,"Hello World",Toast.LENGTH_LONG).show();
+           // Toast.makeText(this,"Sign Out",Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(this, Login.class);
+            startActivity(intent);
+        }else if(itemIdf==R.id.nav_medicine){
+            Intent intent=new Intent(this, MedicineActivity2.class);
+            startActivity(intent);
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

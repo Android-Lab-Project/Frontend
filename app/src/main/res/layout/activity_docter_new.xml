@@ -49,41 +49,39 @@
             app:layout_constraintTop_toBottomOf="@+id/view"
             app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:layout_width="179dp"
-            android:layout_height="142dp"
-            android:layout_marginTop="80dp"
-            android:background="@drawable/button_home"
-            android:text="My Doctors"
-            android:onClick="mylistDoctor"
-            android:id="@+id/mydoctor2"
-            android:textColor="#E8ECEF"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.067"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+    <Button
+        android:id="@+id/mydoctor2"
+        android:layout_width="179dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/button_home"
+        android:onClick="mylistDoctor"
+        android:text="My Doctors"
+        android:textColor="#E8ECEF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <Button
-            android:layout_width="186dp"
-            android:layout_height="139dp"
-            android:layout_marginTop="232dp"
-            android:layout_marginBottom="98dp"
-            android:background="@drawable/button_home"
-            android:text="OrderMedicine"
-            android:id="@+id/mymedicine"
-            android:textColor="#E8ECEF"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.936"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintVertical_bias="1.0" />
+    <Button
+        android:id="@+id/mymedicine"
+        android:layout_width="186dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/button_home"
+        android:text="OrderMedicine"
+        android:textColor="#E8ECEF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <Button
+    <Button
             android:layout_width="175dp"
-
             android:id="@+id/myprofile"
+            android:onClick="profileClickDoctor"
             android:layout_height="140dp"
             android:layout_marginTop="232dp"
             android:layout_marginBottom="98dp"
