@@ -36,12 +36,13 @@
 
         <Button
             android:id="@+id/aiFeaturesDoctor"
-            android:layout_width="182dp"
-            android:layout_height="137dp"
+            android:layout_width="175dp"
+            android:layout_height="130dp"
             android:layout_marginTop="81dp"
             android:layout_marginBottom="237dp"
             android:background="@drawable/button_home"
             android:text="AI Feature"
+            android:onClick="ai"
             android:textColor="#E8ECEF"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,53 +52,50 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:layout_width="179dp"
-            android:layout_height="142dp"
+            android:layout_width="175dp"
+            android:layout_height="130dp"
             android:layout_marginTop="80dp"
             android:background="@drawable/button_home"
-            android:text="Appointments"
+            android:text="Patients"
             android:onClick="myListDoctor"
             android:id="@+id/appointmentDetailForDoctor"
             android:textColor="#E8ECEF"
-            android:textSize="16sp"
+            android:textSize="23sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.067"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <Button
-            android:layout_width="186dp"
-            android:layout_height="139dp"
-            android:layout_marginTop="232dp"
-            android:layout_marginBottom="98dp"
-            android:background="@drawable/button_home"
-            android:text="Medicine List"
-            android:id="@+id/myDoctorMedicine"
-            android:textColor="#E8ECEF"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.936"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintVertical_bias="1.0" />
+    <Button
+        android:id="@+id/myDoctorMedicine23"
+        android:layout_width="175dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/button_home"
+        android:text="Medicine List"
+        android:onClick="medicineListW"
+        android:textColor="#E8ECEF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <Button
-            android:layout_width="175dp"
-
-            android:id="@+id/myDoctorProfile"
-            android:layout_height="140dp"
-            android:layout_marginTop="232dp"
-            android:layout_marginBottom="98dp"
-            android:background="@drawable/button_home"
-            android:text="Profile"
-            android:textColor="#E8ECEF"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.067"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
-            app:layout_constraintVertical_bias="1.0" />
+    <Button
+        android:id="@+id/myDoctorProfile"
+        android:onClick="doctorPro"
+        android:layout_width="175dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/button_home"
+        android:text="Profile"
+        android:textColor="#E8ECEF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

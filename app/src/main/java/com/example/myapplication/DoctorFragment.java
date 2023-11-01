@@ -181,6 +181,7 @@ public class DoctorFragment extends Fragment {
             public void retry(VolleyError error) throws VolleyError {
 
             }
+
         });
         queue.add(stringRequest);
     }

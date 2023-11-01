@@ -1,22 +1,13 @@
 package com.example.myapplication;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.Bundle;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,34 +25,34 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicineFragment extends Fragment {
-
+public class MedicineActivity2 extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
     //String url ="https://api.jsonserve.com/9ehGWC";
-   // String url ="https://api.jsonserve.com/j5Uocl";
+    // String url ="https://api.jsonserve.com/j5Uocl";
 
-  //  String url = StaticVariable.araf+"/medicine/all";
-  String url="https://api.jsonserve.com/mhSeNz";
-    Medicine_MyAdapter myAdapter;
-    List<Medicine_MyItem> listItems;
+    //  String url = StaticVariable.araf+"/medicine/all";
+    String url="https://api.jsonserve.com/mhSeNz";
+    Medicine_MyAdapter2 myAdapter;
+    List<Medicine_MyItem2> listItems;
     Context context;
     ProgressDialog progressDialog;
 
     SearchView searchView;
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_medicine, container, false);
-        context = getContext();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_medicine2);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewMedicine);
+        context = this;
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMedicine2);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-        searchView = view.findViewById(R.id.searchViewMedicine);
+        searchView = findViewById(R.id.searchViewMedicine2);
         searchView.clearFocus();
 
 
@@ -69,8 +60,9 @@ public class MedicineFragment extends Fragment {
         loadData();
         searchMedicine();
 
-        return view;
+
     }
+
 
     public void searchMedicine(){
 
@@ -92,9 +84,9 @@ public class MedicineFragment extends Fragment {
     }
 
     private void filterlist333(String text){
-        List<Medicine_MyItem>filerList=new ArrayList<>();
+        List<Medicine_MyItem2>filerList=new ArrayList<>();
 
-        for(Medicine_MyItem item:listItems){
+        for(Medicine_MyItem2 item:listItems){
             if(item.getMedicine_name().toLowerCase().contains(text.toLowerCase())){
                 filerList.add(item);
             }
@@ -114,12 +106,12 @@ public class MedicineFragment extends Fragment {
         progressDialog.setMessage("Loading......");
         progressDialog.show();
 
-        Toast.makeText(context, "Server is loading!", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(context, "Server is loading!", Toast.LENGTH_SHORT).show();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
-                Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
                 String medicine_name,company_name,medicine_price;
 
                 try {
@@ -133,16 +125,16 @@ public class MedicineFragment extends Fragment {
                         company_name=  receive.getString("company");
                         medicine_price=  receive.getString("price");
 
-                        Medicine_MyItem item = new Medicine_MyItem(
+                        Medicine_MyItem2 item = new Medicine_MyItem2(
                                 medicine_name,company_name,medicine_price
                         );
                         listItems.add(item);
                         //   Log.e("TAG",header+" "+desc+" "+img);
                     }
-                    myAdapter = new Medicine_MyAdapter(listItems, context);
+                    myAdapter = new Medicine_MyAdapter2(listItems, context);
                     recyclerView.setAdapter(myAdapter);
 
-                    Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -157,7 +149,7 @@ public class MedicineFragment extends Fragment {
 
         RequestQueue queue = Volley.newRequestQueue(context);
 
-      stringRequest.setRetryPolicy(new RetryPolicy() {
+        stringRequest.setRetryPolicy(new RetryPolicy() {
             @Override
             public int getCurrentTimeout() {
                 return 50000;
@@ -176,5 +168,4 @@ public class MedicineFragment extends Fragment {
 
         queue.add(stringRequest);
     }
-
 }

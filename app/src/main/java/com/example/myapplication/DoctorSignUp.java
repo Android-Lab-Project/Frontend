@@ -186,6 +186,7 @@ public class DoctorSignUp extends AppCompatActivity implements View.OnClickListe
 
             //profile,patientlist, AI]
 
+
             //picture add
 
           //  HashMap<String,String>mp=new HashMap<>();
