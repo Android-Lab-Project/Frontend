@@ -138,7 +138,7 @@ public class DoctorFragment extends Fragment {
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject receive = array.getJSONObject(i);
-                        header=  receive.getString("firstName") + " " + receive.getString("lastName");
+                        header=  receive.getString("firstName");
                         desc=  receive.getString("degrees");
                         img=  receive.getString("dp");
                         idForDoctor=receive.getLong("id");

@@ -80,6 +80,9 @@ public class Signup extends AppCompatActivity implements View.OnClickListener {
         String  password=signUpPassword.getText().toString().trim();
        String  phone_number=signUpContactNumber.getText().toString().trim();
 
+       //ai gula firebase e dite hobe , firebase theke retrieve korte hobe
+
+        //firebase dite hobe, nite hobe
 
 
 

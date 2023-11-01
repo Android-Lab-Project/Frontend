@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +20,8 @@ public class DoctorDashboard extends AppCompatActivity {
 
     private Button buttonProfile;
 
+    private Button buttonSignout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,13 +31,23 @@ public class DoctorDashboard extends AppCompatActivity {
        buttonMedicine= (Button) findViewById (R.id.myDoctorMedicine23);
         buttonAI= (Button) findViewById (R.id.aiFeaturesDoctor);
         buttonProfile=(Button)findViewById(R.id.myDoctorProfile);
-
+        buttonSignout=(Button)findViewById(R.id.signOutDoctor);
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
                 openBook();
+
+            }
+        });
+
+        buttonSignout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                openSignOut();
 
             }
         });
@@ -74,6 +87,17 @@ public class DoctorDashboard extends AppCompatActivity {
         Intent intent = new Intent(this, PatientMain.class);
         startActivity(intent);
     }
+
+    public void openSignOut() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+            }
+        }, 2000);
+    }
+
 
     public void openAI() {
         Intent intent = new Intent(this, AIConsultation.class);

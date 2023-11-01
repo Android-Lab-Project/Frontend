@@ -96,6 +96,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signOutDoctor"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="20dp"
+        android:text="Sign Out"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myDoctorProfile" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

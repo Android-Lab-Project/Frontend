@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -103,8 +104,17 @@ public class DashBoard extends AppCompatActivity implements NavigationView.OnNav
 
         } else if (itemIdf == R.id.nav_signout) {
            // Toast.makeText(this,"Sign Out",Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(this, Login.class);
-            startActivity(intent);
+//            Intent intent=new Intent(this, Login.class);
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    startActivity(intent);
+                }
+            }, 2000);
+
+//            startActivity(intent);
         }else if(itemIdf==R.id.nav_medicine){
             Intent intent=new Intent(this, MedicineActivity2.class);
             startActivity(intent);

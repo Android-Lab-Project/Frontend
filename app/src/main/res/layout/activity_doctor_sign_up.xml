@@ -16,7 +16,7 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -161,36 +161,19 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="300dp"
+        android:layout_marginStart="150dp"
         android:layout_marginEnd="297dp"
-        android:layout_marginBottom="-1dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/black"
         android:padding="15dp"
         android:background="@drawable/button_green"
-        android:text="Done"
+        android:text="Sign In"
         app:cornerRadius="10dp"
         app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnBackDoctor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/button_green"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="297dp"
-        android:layout_marginBottom="-1dp"
-        android:backgroundTint="@color/black"
-        android:padding="15dp"
-        android:text="Back"
-        app:cornerRadius="10dp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -78,7 +78,7 @@ public class DoctorMyMain extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
-                Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(context, "Server is Okay!", Toast.LENGTH_SHORT).show();
 
                 String header,date,img,phoneNumber;
                 Long cancelId;
@@ -111,7 +111,7 @@ public class DoctorMyMain extends AppCompatActivity {
                     myAdapter = new DoctorMyList_MyAdapter(listItems, context);
                     recyclerView.setAdapter(myAdapter);
 
-                    Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(context, "Server is Okay and Okay!", Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
