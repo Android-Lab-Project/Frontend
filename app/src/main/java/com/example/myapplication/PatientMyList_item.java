@@ -6,6 +6,7 @@ public class PatientMyList_item {
 
     private String patientName;
     private String appointmentDate_for;
+
     private  String patientProblem;
 
     private String patientContactInformation;

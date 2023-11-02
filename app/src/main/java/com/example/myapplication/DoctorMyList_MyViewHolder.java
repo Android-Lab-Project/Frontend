@@ -13,6 +13,8 @@ public class DoctorMyList_MyViewHolder   extends RecyclerView.ViewHolder{
 
 
 
+
+
     TextView DoctorNameText;
     TextView AppointmentDate;
 
@@ -29,7 +31,7 @@ public class DoctorMyList_MyViewHolder   extends RecyclerView.ViewHolder{
         super(itemView);
         DoctorNameText=(TextView) itemView.findViewById(R.id.mydoctor_view_title);
         AppointmentDate=(TextView) itemView.findViewById(R.id.myappointmenttime);
-        imageViewDoctor=(ImageView) itemView.findViewById(R.id.mydoctor_item_image);
+     //  imageViewDoctor=(ImageView) itemView.findViewById(R.id.mydoctor_item_image);
         DoctorContact=(TextView) itemView.findViewById(R.id.mydoctor_view_con);
         cancel=(Button) itemView.findViewById(R.id.Cancelfor);
         appointmentId=(TextView) itemView.findViewById(R.id.mydoctor_view_idHello);

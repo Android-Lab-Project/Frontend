@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.squareup.picasso.Picasso;
@@ -101,6 +102,8 @@ public class Doctor_Appointment1 extends AppCompatActivity {
 
             requestBody.put("doctorId",idForDoctor);
             requestBody.put("email", StaticVariable.email);
+           // Toast.makeText(this, "email : " +StaticVariable.email, Toast.LENGTH_LONG).show();
+
 
         } catch (JSONException e) {
             e.printStackTrace();
