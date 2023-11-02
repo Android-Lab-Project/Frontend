@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 public class DoctorMyList_item {
 
+
     private String doctor_name;
     private String doctor_pic;
     private String apppointment_date;

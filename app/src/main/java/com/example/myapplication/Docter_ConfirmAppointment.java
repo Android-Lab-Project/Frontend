@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 
@@ -158,6 +159,7 @@ public class Docter_ConfirmAppointment extends AppCompatActivity {
 
             requestBody.put("doctorId",StaticVariable.doctor_id);
             requestBody.put("email", StaticVariable.email);
+            Toast.makeText(this, "email : " +StaticVariable.email, Toast.LENGTH_LONG).show();
             requestBody.put("date", StaticVariable.patient_date);
             requestBody.put("userName",StaticVariable.patient_name);
             requestBody.put("problem",StaticVariable.patient_problem);

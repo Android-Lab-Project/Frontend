@@ -29,6 +29,7 @@ public class PatientMyList_MyAdapter extends RecyclerView.Adapter<PatientMyList_
 
 
 
+
     public PatientMyList_MyAdapter(List<PatientMyList_item> mylist,Context context) {
         Mylist = mylist;
         this.context=context;

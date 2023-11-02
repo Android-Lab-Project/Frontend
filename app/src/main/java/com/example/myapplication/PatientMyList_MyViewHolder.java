@@ -15,6 +15,7 @@ public class PatientMyList_MyViewHolder  extends RecyclerView.ViewHolder{
     TextView AppointmentDateText;
     TextView Patientcontact;
 
+
     TextView patientAppointmentTd;
     Button cancel2;
 
